@@ -36,7 +36,7 @@ val orxFeatures = setOf<String>(
 //  "orx-kinect-v1",
 //  "orx-kotlin-parser",
 //  "orx-marching-squares",
-//  "orx-mesh-generators",
+    "orx-mesh-generators",
 //  "orx-midi",
 //  "orx-minim",
     "orx-no-clear",
@@ -110,7 +110,7 @@ dependencies {
 //    implementation(libs.jsoup)
 //    implementation(libs.gson)
 //    implementation(libs.csv)
-
+    implementation("net.e175.klaus:solarpositioning:2.0.0")
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.slf4j.api)
     implementation(libs.kotlin.logging)
