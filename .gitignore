@@ -7,3 +7,5 @@ video/
 screenshots/
 gui-parameters/
 /offline-data/
+/data/video-frames/
+/data/video-frames-cms/

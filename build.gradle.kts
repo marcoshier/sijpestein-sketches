@@ -10,7 +10,7 @@ val applicationMainClass = "TemplateProgramKt"
 
 /**  ## additional ORX features to be added to this project */
 val orxFeatures = setOf<String>(
-//  "orx-boofcv",
+    "orx-boofcv",
     "orx-camera",
 //  "orx-chataigne",
     "orx-color",
@@ -59,7 +59,7 @@ val orxFeatures = setOf<String>(
 //  "orx-temporal-blur",
 //  "orx-tensorflow",    
 //  "orx-time-operators",
-//  "orx-timer",
+    "orx-timer",
 //  "orx-triangulation",
 //  "orx-turtle",
     "orx-video-profiles",
@@ -106,7 +106,7 @@ repositories {
 }
 
 dependencies {
-
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 //    implementation(libs.jsoup)
 //    implementation(libs.gson)
 //    implementation(libs.csv)
@@ -114,6 +114,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.slf4j.api)
     implementation(libs.kotlin.logging)
+    implementation("commons-net:commons-net:3.9.0")
 
     when (applicationLogging) {
         Logging.NONE -> {
