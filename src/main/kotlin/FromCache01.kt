@@ -1,3 +1,4 @@
+/*
 import lib.calcRGBHistogram
 import lib.computeContours
 import lib.kMeansClustering
@@ -90,15 +91,15 @@ fun main() = application {
                 val kpp = kmPP(shad, k = 5)
                 val kMeans = kMeansClustering(shad, kpp)
 
-                val histograms = kMeans.values.map { calcRGBHistogram(it.filter { c -> c.second.alpha != 0.0 && c.second.l > 0.1 }.map { c -> c.second.toRGBa().toSRGB() }) }
+                val histograms = kMeans.map { calcRGBHistogram(it.filter { c -> c.second.alpha != 0.0 && c.second.l > 0.1 }.map { c -> c.second.toRGBa().toSRGB() }) }
                 topColors = histograms.map { it.sortedColors().first().first }.sortedBy { it.luminance }
 
-                val colorPositions = kMeans.values.flatten()
+                val colorPositions = kMeans.flatten()
 
                 topPositions.clear()
                 topColors.forEach  { tc ->
                     val color = colorPositions.minByOrNull { it.second.toRGBa().toSRGB().deltaE76(tc) }
-                    if (color != null && !topPositions.contains(color)) topPositions.add(color)
+                    if (color != null) topPositions.add(color) // && !topPositions.contains(color)
                 }
 
                 drawer.isolatedWithTarget(rt2) {
@@ -136,4 +137,4 @@ fun main() = application {
 
         }
     }
-}
+}*/
