@@ -1,4 +1,4 @@
-import lib.calcRGBHistogram
+
 import lib.computeContours
 import lib.kMeansClustering2
 import lib.kmPP2
